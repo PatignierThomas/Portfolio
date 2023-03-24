@@ -40,7 +40,6 @@ def generate_password(lenght, letters=True, digits=False, symbols=False):
 # def generate_password_with_special_char_and_number(lenght: int):
 #     letter = string.ascii_letters + string.punctuation + string.digits
 #     password = ''.join(random.choice(letter) for i in range(lenght))
-#
 #     return password
 
 

@@ -44,5 +44,4 @@ def generate_password(lenght, letters=True, digits=False, symbols=False):
 #     return password
 
 
-if __name__ == '__main__':
-    generate_password_letters_only(8)
+

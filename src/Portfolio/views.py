@@ -37,9 +37,9 @@ def index(request):
                 return HttpResponse("Invalid header found.")
         else:
             erreur = form.errors
-            return render(request, "portfolio/index.html", {"erreur": erreur})
+            return render(request, "Portfolio/index.html", {"erreur": erreur})
 
-    return render(request, "portfolio/index.html", )
+    return render(request, "Portfolio/index.html", )
 
 
 def redirect_index(request):
@@ -53,9 +53,9 @@ def generator(request):
         lenght, letters, digits, symbols = result[0], result[1], result[2], result[3]
         condition = app.generate_password(int(lenght), letters, digits, symbols)
 
-        return render(request, "portfolio/Generator.html", {"condition": condition})
+        return render(request, "Portfolio/Generator.html", {"condition": condition})
     else:
-        return render(request, "portfolio/Generator.html")
+        return render(request, "Portfolio/Generator.html")
 
 # def send_email(request):
 #     if request.method == 'POST':

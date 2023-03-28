@@ -7,7 +7,8 @@
     <div class="container-fluid text-center">
         <div class="row justify-content-md-center">
             <div class="col-sm-4">
-            <input class="form-check-input" type="checkbox" name="letters" id="flexRadioDefault2" checked>
+                <input class="form-check-input" type="hidden" name="letters" value="True">
+                <input class="form-check-input" type="checkbox" name="letters" id="flexRadioDefault2" checked disabled>
             <label class="form-check-label" for="flexRadioDefault2">
             Avec des lettres (abcdefgh)
             </label>
@@ -46,8 +47,8 @@
     </div>
 </form>
 
-<div class="form-group">
-    <div class="row justify-content-md-center">
+<div class="form-group" >
+    <div class="row justify-content-md-center pt-2">
         <div class="col-sm-6">
             <input class="form-control" type="text" value="{%  if condition %}{{ condition }}{% endif %}" style="background-color:white">
         </div>

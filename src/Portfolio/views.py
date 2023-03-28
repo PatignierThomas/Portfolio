@@ -14,18 +14,18 @@ def index(request):
             "subject": request.POST.get("subject"),
             "message": request.POST.get("message"),
             "email_from": request.POST.get("email_from"),
-            "recipient_list": ["patignier.contacte@gmail.com", ]
+            "recipient_list": ["patignier.contact@gmail.com", ]
         }
         form = EmailForm(data)
         if form.is_valid():
-            subject = form.cleaned_data["subject"]
             email_from = form.cleaned_data["email_from"]
+            subject = form.cleaned_data["subject"], email_from
             message = form.cleaned_data['message']
             try:
                 with get_connection() as connection:
                     # subject = request.POST.get("subject")
                     # email_from = request.POST.get("mail")
-                    recipient_list = ["patignier.contacte@gmail.com", ]
+                    recipient_list = ["patignier.contact@gmail.com", ]
                     # message = request.POST.get("message")
                     mail = EmailMessage(subject, message, email_from, recipient_list)
                     mail.send()

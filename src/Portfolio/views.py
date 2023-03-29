@@ -77,5 +77,4 @@ def generator(request):
 #             recipient_list = [settings.EMAIL_HOST_USER, ]
 #             message = request.POST.get("message")
 #             EmailMessage(subject, message, email_from, recipient_list, connection=connection).send()
-#
 #     return render(request, 'home.html')

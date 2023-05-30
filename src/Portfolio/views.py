@@ -1,10 +1,12 @@
 from django.conf import settings
 from django.contrib import messages
-from django.http import JsonResponse, HttpResponse, HttpResponseRedirect
+from django.contrib.auth import authenticate, login
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.core.mail import EmailMessage, get_connection, BadHeaderError
 
 import app
+from blog.forms import LogInForm
 from .forms import EmailForm
 
 
@@ -56,6 +58,28 @@ def generator(request):
         return render(request, "Portfolio/Generator.html", {"condition": condition})
     else:
         return render(request, "Portfolio/Generator.html")
+
+
+def login_def(request):
+    if request.method == 'POST':
+        data = {
+            "username": request.POST.get("username"),
+            "password": request.POST.get("password"),
+        }
+        form = LogInForm(data)
+        if form.is_valid():
+            user = authenticate(request, username=data.get("username"), password=data.get("password"))
+            if user is not None:
+                login(request, user)
+                return render(request, "Blog/blogpost_list.html")
+            elif user is None:
+                messages.error(request, "username or password not correct")
+                return render(request, "Blog/login.html")
+        else:
+            erreur = form.errors
+            return render(request, "Blog/login.html", {"erreur": erreur})
+            # return render(request, "Blog/login.html", {"global_error": "Cred invalid"})
+    return render(request, "Blog/login.html")
 
 # def send_email(request):
 #     if request.method == 'POST':

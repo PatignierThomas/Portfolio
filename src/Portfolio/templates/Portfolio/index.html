@@ -1,5 +1,11 @@
 {% extends "Portfolio/base.html" %}
 {% load static %}
+
+{% block title %}
+    <title>Patignier Thomas</title>
+{% endblock %}
+
+
 {% block content %}
 
 <div class="container-fluid text-center" id="Accueil">
@@ -22,7 +28,7 @@
     <div class="row pt-5 pd-1" id="Projet">
         <div class="col">
             <h1 style="color: black">Mes Projets Personnels</h1>
-            <h2 style="color: black">Projets Web</h2>
+<!--            <h2 style="color: black">Projets Web</h2>-->
         </div>
     </div>
 
@@ -31,18 +37,20 @@
             <div class="card">
                 <div class="card-body">
 <!--                    Title here-->
-                    <p class="card-text"><a href="{% url 'Generator' %}"><h5 class="card-title">Un générateur de mot de passe...</h5></a></p>
+                    <p class="card-text"><a href="{% url 'index' %}"><h5 class="card-title">Ce Portfolio, évidement!</h5></a></p>
                 </div>
             </div>
         </div>
+
         <div class="col-sm-4 mb-3 mb-sm-0">
             <div class="card">
                 <div class="card-body">
 <!--                    Title here-->
-                    <p class="card-text"><h5 class="card-title">... et ce portfolio ! </h5></p>
+                    <p class="card-text"><a href="{% url 'Generator' %}"><h5 class="card-title">Un générateur de mot de passe</h5></a></p>
                 </div>
             </div>
         </div>
+
         <div class="row justify-content-md-center pt-5">
             <div class="col-sm-4 mb-3 mb-sm-0">
                 <div class="card">
@@ -52,36 +60,45 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <div class="row pt-5">
-        <div class="col">
-            <h2 style="color: black">Projets DataScience</h2>
-        </div>
-    </div>
-
-    <div class="row justify-content-center">
         <div class="col-sm-4 mb-3 mb-sm-0">
-            <div class="card text-bg-dark">
-                {% load static %} <img src="{% static 'css/Film_by_country.png'%}" class="card-img-top" alt="graph1">
+            <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title"></h5>
-                    <p class="card-text">Nombre de films et séries sortis sur Netflix en fonction du pays d'origine</p>
+<!--                    Title here-->
+                    <p class="card-text"><a href="{% url 'myblog:blog' %}"><h5 class="card-title">Le CRUD d'un blog et sa gestion en base de données(POSTGRESQL)</h5></a></p>
                 </div>
             </div>
         </div>
-
-        <div class="col-sm-4">
-            <div class="card text-bg-dark">
-                {% load static %} <img src="{% static 'css/Release_per_year.png'%}" class="img-fluid" alt="graph2">
-                <div class="card-body">
-                    <h5 class="card-title"></h5>
-                    <p class="card-text">Nombre de films et séries sortis sur Netflix par année</p>
-                </div>
-            </div>
         </div>
     </div>
+
+<!--    <div class="row pt-5">-->
+<!--        <div class="col">-->
+<!--            <h2 style="color: black">Projets DataScience</h2>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div class="row justify-content-center">-->
+<!--        <div class="col-sm-4 mb-3 mb-sm-0">-->
+<!--            <div class="card text-bg-dark">-->
+<!--                {% load static %} <img src="{% static 'css/Film_by_country.png'%}" class="card-img-top" alt="graph1">-->
+<!--                <div class="card-body">-->
+<!--                    <h5 class="card-title"></h5>-->
+<!--                    <p class="card-text">Nombre de films et séries sortis sur Netflix en fonction du pays d'origine</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        <div class="col-sm-4">-->
+<!--            <div class="card text-bg-dark">-->
+<!--                {% load static %} <img src="{% static 'css/Release_per_year.png'%}" class="img-fluid" alt="graph2">-->
+<!--                <div class="card-body">-->
+<!--                    <h5 class="card-title"></h5>-->
+<!--                    <p class="card-text">Nombre de films et séries sortis sur Netflix par année</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 
     <div class="row pt-5" id="Competence">
         <div class="col">
@@ -91,7 +108,7 @@
 
     <div class="row">
         <div class="col">
-            {% load static %} <img src="{% static 'css/Niceplot.png'%}" class="img-fluid" alt="graph1">
+            {% load static %} <img src="{% static 'css/PlotlangageV2.png'%}" class="img-fluid" alt="graph1">
         </div>
         <div class="col">
             {% load static %} <img src="{% static 'css/softskills.png'%}" class="img-fluid" alt="graph2">
@@ -124,6 +141,14 @@
             <div class="col-md-1">
                 {% load static %} <img src="{% static 'css/bootstrap-original.svg'%}" class="img-fluid" alt="icon5" width="100" height="100">
                 <h6>Bootstrap</h6>
+            </div>
+            <div class="col-md-1">
+                {% load static %} <img src="{% static 'css/nginx-logo.svg'%}" class="img-fluid" alt="icon5" width="100" height="100">
+                <h6>Nginx</h6>
+            </div>
+            <div class="col-md-1">
+                {% load static %} <img src="{% static 'css/postgresql-icon.svg'%}" class="img-fluid" alt="icon5" width="100" height="100">
+                <h6>PostgreSQL</h6>
             </div>
         </div>
 

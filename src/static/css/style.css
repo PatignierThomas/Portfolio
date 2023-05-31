@@ -1,0 +1,39 @@
+body {
+background-color: #8d99ae;
+
+}
+
+#Accueil, #Projet, #Competence{
+    height : 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#A_propos{
+    background-color: #7400b8;
+    padding-left: 0;
+    padding-right: 0;
+}
+#Accueil {
+    height : 100vh;
+    background-image: url("black-hole-g960ca4857_1920.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 2rem;
+}
+
+
+#Contact {
+    height : 75vh;
+    background-color: #7400b8;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+.errorlist {
+    list-style: none;
+    color:red
+}

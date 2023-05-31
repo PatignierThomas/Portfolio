@@ -77,9 +77,9 @@ def login_def(request):
                 return render(request, "Blog/login.html")
         else:
             erreur = form.errors
-            return render(request, "Blog/login.html", {"erreur": erreur})
+            return render(request, "blog/login.html", {"erreur": erreur})
             # return render(request, "Blog/login.html", {"global_error": "Cred invalid"})
-    return render(request, "Blog/login.html")
+    return render(request, "blog/login.html")
 
 # def send_email(request):
 #     if request.method == 'POST':

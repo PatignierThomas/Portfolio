@@ -48,7 +48,7 @@ class BlogPostDetail(DetailView):
 
 
 class BlogPostDelete(LoginRequiredMixin, DeleteView):
-    """ default file name : nomdumodele_confirm_delete.html"""
+    """ default file name : nomdumodele_confirm_delete.html """
     login_url = "/login/"
     redirect_field_name = "redirect_to"
     model = BlogPost

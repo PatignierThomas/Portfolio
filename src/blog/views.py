@@ -53,3 +53,4 @@ class BlogPostDelete(LoginRequiredMixin, DeleteView):
     redirect_field_name = "redirect_to"
     model = BlogPost
     success_url = reverse_lazy("posts:blog")
+

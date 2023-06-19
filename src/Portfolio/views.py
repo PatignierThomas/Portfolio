@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.shortcuts import render, redirect
 from django.core.mail import EmailMessage, get_connection, BadHeaderError
 
@@ -54,8 +54,9 @@ def generator(request):
                   request.POST.get("symbols")]
         lenght, letters, digits, symbols = result[0], result[1], result[2], result[3]
         condition = app.generate_password(int(lenght), letters, digits, symbols)
-
-        return render(request, "Portfolio/Generator.html", {"condition": condition})
+        return JsonResponse({"condition": condition})
+        # method pour page  statique
+        # return render(request, "Portfolio/Generator.html", {"condition": condition})
     else:
         return render(request, "Portfolio/Generator.html")
 

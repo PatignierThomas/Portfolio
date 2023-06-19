@@ -1,4 +1,5 @@
 {% extends "Portfolio/base.html" %}
+{% load static %}
 
 {% block title %}
     <title>Patignier Thomas</title>
@@ -8,12 +9,12 @@
 
 {% block content %}
 
-<form method="post" class="row d-flex justify-content-center" id="generator" style="margin-top:125px;">
+<form method="post" class="row d-flex justify-content-center" id="generator" style="margin-top:125px;" action="{% url 'Generator' %}">
     {% csrf_token %}
     <div class="container-fluid text-center">
         <div class="row justify-content-md-center">
             <div class="col-sm-4">
-                <input class="form-check-input" type="hidden" name="letters" value="True">
+                <input class="form-check-input" type="hidden" name="letters" value="True" id="letters">
                 <input class="form-check-input" type="checkbox" name="letters" id="flexRadioDefault2" checked disabled>
             <label class="form-check-label" for="flexRadioDefault2">
             Avec des lettres (abcdefgh)
@@ -23,8 +24,8 @@
 
         <div class="row justify-content-md-center">
             <div class="col-sm-4">
-            <input class="form-check-input" type="checkbox" id="flexCheckDefault1" name="digits">
-            <label class="form-check-label" for="flexCheckDefault1">
+            <input class="form-check-input" type="checkbox" id="digits" name="digits">
+            <label class="form-check-label" for="digits">
               Avec des chiffres(0123456789)
             </label>
             </div>
@@ -32,10 +33,10 @@
 
         <div class="row justify-content-md-center">
             <div class="col-sm-4">
-            <input class="form-check-input" type="checkbox" id="flexCheckDefault2" name="symbols">
-            <label class="form-check-label" for="flexCheckDefault2">
-            Avec des symboles(!%/?@'\)
-            </label>
+                <input class="form-check-input" type="checkbox" id="symbols" name="symbols">
+                <label class="form-check-label" for="symbols">
+                Avec des symboles(!%/?@'\)
+                </label>
             </div>
         </div>
 
@@ -56,10 +57,12 @@
 <div class="form-group" >
     <div class="row justify-content-md-center pt-2">
         <div class="col-sm-6">
-            <input class="form-control" type="text" value="{%  if condition %}{{ condition }}{% endif %}" style="background-color:white">
+            <input class="form-control" type="text" value="{%  if condition %}{{ condition }}{% endif %}" style="background-color:white" id="endPassword">
         </div>
     </div>
 </div>
+
+<script src="{% static 'css/generator.js' %}"></script>
 {% endblock content %}
 
 {%  for erreur in global_error %}
